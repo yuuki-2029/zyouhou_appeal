@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lanag="ja">
+<html lang="ja">
     <head>
         <meta charset="UTF-8">
         <title>香川大学創造工学部　情報コース　紹介</title>
-                <p id="gradation"></p>
         <style>
             body {
                 font-family: "Segoe UI", sans-serif;
@@ -41,6 +40,17 @@
         <header>
             <h1>香川大学創造工学部　情報コース</h1>
             <p>次世代を切り開く情報技術者を育成</p>
+
+            <p id="gradation"></p>
+            <script>
+            const gradation = document.getElementById("gradation");
+            for (let i = 0; i < 1180; i += 15) {
+                const color = `oklch(80% 0.1 ${i})`;
+                gradation.insertAdjacentHTML("beforeend",
+                    `<span style="color: ${color};">█</span>`);
+            }
+            </script>
+
         </header>
         <section>
             <h2>多様な分野の教授</h2>
