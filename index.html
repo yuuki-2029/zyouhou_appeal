@@ -6,7 +6,6 @@
         <style>
             body {
                 font-family: "Segoe UI", sans-serif;
-                background-color: #f4f8fb;
                 margin: 0;
                 padding: 0;
                 color: #333;
@@ -49,5 +48,26 @@
             <h2>大人数で講義から生まれる多様性</h2>
             <p>今年から情報コースの生徒の人数が大幅に増え、昨年の生徒の人数の約２倍である70人のコースになりました。よって、様々な考え方を持つ人と触れる機会が増え、自分の視野が広げることが出来るようになりました。また、様々なバックグラウンドを持つ学生と交流することが出来るため、ディスカッションやグループワークでより多角的な視点を得ることが出来ます。</p>
         </section>
+        <script>
+            const images = [
+                                'img1.jpg',
+                                'img2.jpg',
+                                'img3.jpg'
+            ]; 
+            let current = 0;
+            function setBackground(image) {
+                document.body.style.backgroundImage = `url('${image}')`;
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundPosition = 'center';
+                document.body.style.transition = 'background-image 1s ease-in-out';
+            }
+
+    
+                    setBackground(images[current]);
+                    setInterval(() => {
+                    current = (current + 1) % images.length;
+                    setBackground(images[current]);
+                    }, 3000);
+        </script>
     </body>
 </html>
