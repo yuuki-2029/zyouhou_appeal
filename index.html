@@ -41,6 +41,19 @@
             <h1>香川大学創造工学部　情報コース</h1>
             <p>次世代を切り開く情報技術者を育成</p>
         </header>
+
+        
+        <p id="gradation"></p>
+        <script>
+        const gradation = document.getElementById("gradation");
+        for (let i = 0; i < 1180; i += 15) {
+            const color = `oklch(80% 0.1 ${i})`;
+            gradation.insertAdjacentHTML("beforeend",
+                `<span style="color: ${color};">█</span>`);
+        }
+        </script>
+
+
         <section>
             <h2>多様な分野の教授</h2>
             <p>セキュリティやUI、人工知能など情報の世界には多くの分野が存在します。香川大学創造工学部情報コースでは自身の専門分野で過去にご活躍された多様なプロフェッショナルが教授として在籍されており、学生がそれぞれ興味のある分野についてより専門的に学ぶことができます。</p>
