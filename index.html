@@ -40,6 +40,27 @@
                 color: #777;
             }
             h6{color: #005bac;}
+             #slideshow-container {
+                position: relative;
+                width: 100%;
+                max-width: 1000px;
+                height: 200px;
+                margin: auto;
+                overflow: hidden;
+            }
+
+            #slideshow-container img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+
+            #slideshow-container img.active {
+                opacity: 1;
+            }
         </style>
     </head>
     <body>
@@ -47,6 +68,10 @@
             <h1>香川大学創造工学部　情報コース</h1>
             <p>情報コースのここがすごい！</p>
         </header>
+        <div id="slideshow-container">
+                    <img src="img1.jpg" class="active">
+                    <img src="img2.jpg">
+                    <img src="img3.jpg"> ;</div>
         <section>
             <h2>多様な分野の教授</h2>
             <p>セキュリティやUI、人工知能など情報の世界には多くの分野が存在します。香川大学創造工学部情報コースでは自身の専門分野で過去にご活躍された多様なプロフェッショナルが教授として在籍されており、学生がそれぞれ興味のある分野についてより専門的に学ぶことができます。</p>
@@ -87,30 +112,25 @@
         <section>
             <h2>みんなも香川大学情報コースに行こう！！</h2>
         </section>
-        <script>
-            const images = [
-                                'img1.jpg',
-                                'img2.jpg',
-                                'img3.jpg'
-            ]; 
+       <script>
+            const images = document.querySelectorAll("#slideshow-container img");
             let current = 0;
-            function setBackground(image) {
-                document.body.style.backgroundImage = `url('${image}')`;
-                document.body.style.backgroundSize = 'cover';
-                document.body.style.backgroundPosition = 'center';
-                document.body.style.transition = 'background-image 1s ease-in-out';
-            }
 
-    
-                    setBackground(images[current]);
-                    setInterval(() => {
-                    current = (current + 1) % images.length;
-                    setBackground(images[current]);
-                    }, 3000);
+            images.forEach((img, index) => {
+                           img.classList.remove("active");
+                          });
+            images[current].classList.add("active");
+
+                   setInterval(() => {
+            images[current].classList.remove("active");
+                            current = (current + 1) % images.length;
+            images[current].classList.add("active");
+                                     }, 3000);
         </script>
     </body>
     <footer>
      <h6>参考文献</h6>
-            <p>香川大学創造工学部　http://www.kagawa-u.ac.jp/kagawa-u_ead/</p>
+            <p>香川大学創造工学部</p>
+            <a href="https://www.kagawa-u.ac.jp/kagawa-u_ead/course/security/">https://www.kagawa-u.ac.jp/kagawa-u_ead/course/security/</a>
         </footer>
 </html>
