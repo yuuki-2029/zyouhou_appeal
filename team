@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>P5.js 練習問題解答</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.0.3/lib/p5.min.js">
+    </script>
+  </head>
+  <body>
+    <h1>P5.js 練習問題解答</h1>
+    <script>
+      function setup() {
+        createCanvas(320, 180);
+      }
+
+      function draw() {
+        let x=0;
+        let y=0;
+        let z=320;
+        let w=180;
+        let h=0;
+        let i=0;
+         for (i=0; i< 18; i+= 1) {
+             stroke("black");
+             strokeWeight(0.1);
+             fill('oklch(75% 50% ${h})');
+             rect(x,y,z,w);
+             x=x+10;
+             y=y+5;
+             z=z-15;
+             w=w-8;
+             h=h+20;
+          }
+　　　 // ここに図形を描画するコードを追加
+      }
+    </script>
+  </body>
+</html>
